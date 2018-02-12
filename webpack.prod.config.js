@@ -52,9 +52,12 @@ const config = {
           fallback: 'style-loader',
           use: [
             'css-loader',
-            { loader: 'sass-loader', query: { sourceMap: false } },
+            {
+              loader: 'sass-loader',
+              query: { sourceMap: false } 
+            },
           ],
-          publicPath: '../'
+          publicPath: '../',
         }),
       },
       {

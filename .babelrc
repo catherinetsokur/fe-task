@@ -3,7 +3,8 @@
     ["es2015"],
     "stage-2",
     "react",
-    "react-boilerplate"
+    "react-boilerplate",
+    "flow"
   ],
 
   "plugins": [

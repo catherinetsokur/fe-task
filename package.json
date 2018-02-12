@@ -34,24 +34,26 @@
     }
   },
   "dependencies": {
-    "cross-env": "5.1.2",
     "prop-types": "^15.6.0",
     "react": "16.2.0",
     "react-dom": "16.2.0",
     "react-hot-loader": "4.0.0-beta.16",
-    "react-router-dom": "4.2.2"
+    "react-router-dom": "4.2.2",
+    "semantic-ui-react": "^0.78.2"
   },
   "devDependencies": {
-    "babel-cli": "6.26.0",
+    "babel-cli": "^6.26.0",
     "babel-core": "6.26.0",
     "babel-eslint": "8.1.2",
     "babel-jest": "22.2.0",
     "babel-loader": "7.1.2",
     "babel-preset-es2015": "6.24.1",
+    "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "6.24.1",
     "babel-preset-react-boilerplate": "1.1.1",
     "babel-preset-react-hmre": "1.1.1",
     "babel-preset-stage-2": "6.24.1",
+    "cross-env": "5.1.2",
     "css-loader": "0.28.9",
     "enzyme": "3.3.0",
     "enzyme-adapter-react-16": "1.1.1",
@@ -63,6 +65,7 @@
     "eslint-plugin-react": "7.5.1",
     "extract-text-webpack-plugin": "3.0.2",
     "file-loader": "1.1.6",
+    "flow-bin": "^0.65.0",
     "html-webpack-plugin": "2.30.1",
     "husky": "0.15.0-rc.2",
     "jest": "22.1.0",

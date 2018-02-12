@@ -1,18 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { Container } from 'semantic-ui-react';
+
+import Header from '../components/Header';
+
 const Layout = ({ children }) => {
   return (
     <div>
-      <header>
-        This is header
-      </header>
-      <div>
+      <Container text centered>
+        <Header />
+      </Container>
+      <Container>
         {children}
-      </div>
-      <footer>
-        This is footer
-      </footer>
+      </Container>
     </div>
   );
 };

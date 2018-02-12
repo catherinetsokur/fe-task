@@ -32,10 +32,10 @@ const config = {
   module: {
     rules: [
       {
-        enforce: "pre",
+        enforce: 'pre',
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: "eslint-loader"
+        loader: 'eslint-loader',
       },
       {
         test: /\.js$/,
@@ -58,7 +58,7 @@ const config = {
               },
             },
           ],
-          publicPath: '../'
+          publicPath: '../',
         }),
       },
       {
@@ -70,8 +70,8 @@ const config = {
               limit: 8192,
               mimetype: 'image/png',
               name: 'images/[name].[ext]',
-            }
-          }
+            },
+          },
         ],
       },
       {
@@ -134,7 +134,7 @@ const config = {
         eslint: {
           configFile: resolve(__dirname, '.eslintrc'),
           cache: false,
-        }
+        },
       },
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),
