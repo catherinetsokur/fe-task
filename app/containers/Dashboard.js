@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Layout from './Layout';
 import img from '../assets/images/react_logo_512x512.png';
+import Feedback from '../components/Feedback';
 
 class Dashboard extends Component {
   constructor(props) {
@@ -39,7 +40,7 @@ class Dashboard extends Component {
             src={img}
             alt="React Logo"
           />
-          <p>mwahahha</p>
+          <Feedback data={data} />
         </div>
       </Layout>
     );
