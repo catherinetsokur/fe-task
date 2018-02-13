@@ -6,7 +6,6 @@
     "react-boilerplate",
     "flow"
   ],
-
   "plugins": [
     "react-hot-loader/babel"
   ]

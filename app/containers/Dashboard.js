@@ -1,13 +1,24 @@
+// @flow
 import React, { Component } from 'react';
+import { Pagination } from 'semantic-ui-react';
 import Layout from './Layout';
-import img from '../assets/images/react_logo_512x512.png';
-import Feedback from '../components/Feedback';
+import FeedbackList from '../components/FeedbackList';
+import Search from '../components/Search';
 
-class Dashboard extends Component {
-  constructor(props) {
+import type { Item } from '../types';
+
+type DashboardProps = {}
+type DashboardState = {
+  data: { items: Item },
+  activePage: number,
+};
+
+class Dashboard extends Component<DashboardProps, DashboardState> {
+  constructor(props: DashboardProps) {
     super(props);
     this.state = {
-      data: [],
+      data: { items: [] },
+      activePage: 1,
     };
   }
   componentWillMount() {
@@ -25,22 +36,38 @@ class Dashboard extends Component {
     }).catch(error => console.error('Error:', error));
   }
 
+  handleOnPageChange = (event: SyntheticEvent<*>, data: Object) => {
+    const { activePage } = data;
+    this.setState({
+      activePage,
+    });
+  }
+
   render() {
-    const { data } = this.state;
-    console.log('data', data);
+    const { data, activePage } = this.state;
+    const ITEMS_PER_PAGE = 10;
+    let totalPages = 0;
+    // If the data was coming from API i would use {data.total} instead using {item.length}
+    if (data.items) {
+      totalPages = Math.round(data.items.length / ITEMS_PER_PAGE);
+    }
+    const offset = (activePage - 1) * ITEMS_PER_PAGE;
+    const limit = offset + ITEMS_PER_PAGE;
+
     return (
       <Layout>
         <div>
-          <h2 id="heading">Hello ReactJS</h2>
-          <img
-            className="image"
-            style={{ margin: '0.5em' }}
-            height="40"
-            width="40"
-            src={img}
-            alt="React Logo"
+          <Search />
+          <Pagination
+            defaultActivePage={1}
+            totalPages={totalPages}
+            firstItem={null}
+            lastItem={null}
+            pointing
+            secondary
+            onPageChange={this.handleOnPageChange}
           />
-          <Feedback data={data} />
+          <FeedbackList items={data.items.slice(offset, limit)} />
         </div>
       </Layout>
     );

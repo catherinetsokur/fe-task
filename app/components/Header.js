@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { Header as SemanticHeader, Icon } from 'semantic-ui-react';
 

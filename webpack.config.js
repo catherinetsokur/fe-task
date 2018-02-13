@@ -81,8 +81,8 @@ const config = {
             loader: 'file-loader',
             options: {
               name: 'fonts/[name].[ext]'
-            }
-          }
+            },
+          },
         ],
       },
       {
@@ -94,8 +94,8 @@ const config = {
               limit: 8192,
               mimetype: 'application/font-woff',
               name: 'fonts/[name].[ext]',
-            }
-          }
+            },
+          },
         ],
       },
       {
@@ -107,8 +107,8 @@ const config = {
               limit: 8192,
               mimetype: 'application/octet-stream',
               name: 'fonts/[name].[ext]',
-            }
-          }
+            },
+          },
         ],
       },
       {
@@ -120,8 +120,8 @@ const config = {
               limit: 8192,
               mimetype: 'image/svg+xml',
               name: 'images/[name].[ext]',
-            }
-          }
+            },
+          },
         ],
       },
     ]
