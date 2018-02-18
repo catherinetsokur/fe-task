@@ -1,15 +1,16 @@
 // @flow
 import React from 'react';
-import { Header as SemanticHeader, Icon } from 'semantic-ui-react';
+import { Header as SemanticHeader, Segment } from 'semantic-ui-react';
 
 const Header = () => (
-  <SemanticHeader as="h2" icon>
-    <Icon name="settings" />
-    Usabilla Dashboard
-    <SemanticHeader.Subheader>
-      Manage application website feedback.
-    </SemanticHeader.Subheader>
-  </SemanticHeader>
+  <Segment textAlign="center" size="big" vertical>
+    <SemanticHeader as="h2">
+      Feedback Dashboard
+      <SemanticHeader.Subheader>
+        Manage application website feedback.
+      </SemanticHeader.Subheader>
+    </SemanticHeader>
+  </Segment>
 );
 
 export default Header;

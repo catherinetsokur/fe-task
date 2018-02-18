@@ -1,9 +1,9 @@
 // @flow
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Table, Flag } from 'semantic-ui-react';
+import { Table, Flag, Label } from 'semantic-ui-react';
 import UAParser from 'ua-parser-js';
-
+import { getColor } from '../utils';
 import type { Item } from '../types';
 
 const parser = new UAParser();
@@ -42,7 +42,7 @@ const FeedbackList = ({ items }: Props) => {
                 }
               </Table.Cell>
               <Table.Cell>
-                {item.rating}
+                <Label color={getColor(item.rating)} circular>{item.rating}</Label>
               </Table.Cell>
               <Table.Cell>
                 {item.comment}

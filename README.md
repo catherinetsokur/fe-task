@@ -7,7 +7,11 @@ This project includes:
 - [x] React Router v4
 - [x] Component testing using [Enzyme](https://github.com/airbnb/enzyme) and [Jest](https://facebook.github.io/jest)
 - [x] Code Coverage
+<<<<<<< HEAD
 - [x] Latest Webpack (v.3.11.0) and Webpack Dev Server (v.2.9.5) with Scope Hoisting enabled
+=======
+- [x] Latest Webpack (v.3.11.0) and Webpack Dev Server (v.2.9.5)
+>>>>>>> 70761c40240e50112e61e9887fd5a040954a55db
 - [x] Hot Module Replacement using [react-hot-loader](https://github.com/gaearon/react-hot-loader)
 - [x] ES6 linting with continuous linting on file change
 - [x] SASS support
@@ -30,11 +34,14 @@ Make sure you have the latest Stable or LTS version of Node.js installed.
 - `npm run test:watch` - run all tests in watch mode
 - `npm run coverage` - generate code coverage report in the `coverage` folder
 
+<<<<<<< HEAD
 ## Vendor Exporting
 
 You can export specific vendors in separate files and load them. All vendors should be included in `app/vendors` and will be exported in a `vendors` folder under `dist`. The main idea is to serve independent JavaScript and CSS libraries, though currently all file formats are supported.
 
 ! Don't forget to add the vendors in `app/index.html` and `build/index.html`.
+=======
+>>>>>>> 70761c40240e50112e61e9887fd5a040954a55db
 
 ## Code Coverage
 
