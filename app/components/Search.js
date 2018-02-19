@@ -1,10 +1,27 @@
 // @flow
 import React, { Component } from 'react';
-import _ from 'lodash';
-import { Search as SearchInput } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
+// import _ from 'lodash';
+import { Input } from 'semantic-ui-react';
 
-class Search extends Component<{}, *> {
-  constructor(props) {
+type SearchProps = {
+  onChange: (string) => void
+}
+
+type SearchState = {
+  isLoading: boolean,
+  value: string
+}
+
+class Search extends Component<SearchProps, SearchState> {
+  static propTypes = {
+    onChange: PropTypes.func,
+  }
+  static defaultProps = {
+    onChange: () => {},
+  }
+
+  constructor(props: SearchProps) {
     super(props);
     this.state = {
       isLoading: false,
@@ -13,14 +30,12 @@ class Search extends Component<{}, *> {
   }
   resetComponent = () => this.setState({
     isLoading: false,
-    results: [],
     value: '',
   })
 
-  handleResultSelect = (e, { result }) => this.setState({ value: result.title })
-
-  handleSearchChange = (e, { value }) => {
-    this.setState({ isLoading: true, value });
+  handleSearchChange = (e: SyntheticEvent<*>, data: { value: string }) => {
+    this.setState({ isLoading: true, value: data.value });
+    this.props.onChange(data.value);
 
     setTimeout(() => {
       if (this.state.value.length < 1) {
@@ -28,25 +43,24 @@ class Search extends Component<{}, *> {
         return;
       }
 
-      const re = new RegExp(_.escapeRegExp(this.state.value), 'i');
-      const isMatch = result => re.test(result.title);
+      // const re = new RegExp(_.escapeRegExp(this.state.value), 'i');
+      // const isMatch = result => re.test(result.title);
 
       this.setState({
         isLoading: false,
-        results: _.filter([], isMatch),
+        // results: _.filter([], isMatch),
       });
     }, 500);
   }
   render() {
-    const { isLoading, value, results } = this.state;
+    const { isLoading, value } = this.state;
     return (
-      <SearchInput
+      <Input
+        iconPosition="left"
         loading={isLoading}
-        onResultSelect={this.handleResultSelect}
-        onSearchChange={this.handleSearchChange}
-        results={results}
+        placeholder="Search comments"
+        onChange={this.handleSearchChange}
         value={value}
-        {...this.props}
       />
     );
   }

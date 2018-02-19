@@ -33,12 +33,12 @@ const config = {
     rules: [
       {
         enforce: 'pre',
-        test: /\.js$/,
+        test: /\.js$|\.jsx$/,
         exclude: /node_modules/,
         loader: 'eslint-loader',
       },
       {
-        test: /\.js$/,
+        test: /\.js$|\.jsx$/,
         loaders: [
           'babel-loader',
         ],
