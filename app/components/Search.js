@@ -1,7 +1,6 @@
 // @flow
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-// import _ from 'lodash';
 import { Input } from 'semantic-ui-react';
 
 type SearchProps = {
@@ -43,12 +42,8 @@ class Search extends Component<SearchProps, SearchState> {
         return;
       }
 
-      // const re = new RegExp(_.escapeRegExp(this.state.value), 'i');
-      // const isMatch = result => re.test(result.title);
-
       this.setState({
         isLoading: false,
-        // results: _.filter([], isMatch),
       });
     }, 500);
   }
