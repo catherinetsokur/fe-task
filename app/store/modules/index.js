@@ -1,0 +1,1 @@
+export { default as feedbacks } from './feedbacks'; // eslint-disable-line
